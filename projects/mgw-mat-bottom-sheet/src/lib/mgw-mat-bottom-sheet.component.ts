@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./mgw-mat-bottom-sheet.component.scss'],
   imports: []
 })
-export class MgwMatBottomSheetComponent {
-
-}
+export class MgwMatBottomSheetComponent {}
