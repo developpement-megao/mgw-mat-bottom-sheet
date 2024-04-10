@@ -1,0 +1,20 @@
+<mat-nav-list>
+  <ng-container *ngIf="data?.linkList as links">
+    <ng-container *ngFor="let elem of links; let i = index; trackBy: trackByLinkFn">
+      <ng-container *ngIf="elem.link | linkBuild: elem.linkType as hrefLink; else noLink">
+        <a [href]="hrefLink" mat-list-item (click)="openLink($event, elem, hrefLink, i)">
+          <mat-icon *ngIf="elem.icone" matListItemIcon [class.icon-subtitle]="elem.subtitle">{{ elem.icone }}</mat-icon>
+          <span matListItemTitle>{{ elem.label }}</span>
+          <span *ngIf="elem.icone && elem.subtitle" matListItemLine>{{ elem.subtitle }}</span>
+          <span *ngIf="!elem.icone" matLine>{{ elem.subtitle }}</span>
+        </a>
+      </ng-container>
+      <ng-template #noLink>
+        <mat-list-item (click)="declencheClicResult(elem, elem.link, i)">
+          <span matListItemTitle>{{ elem.label }}</span>
+          <span matLine>{{ elem.subtitle }}</span>
+        </mat-list-item>
+      </ng-template>
+    </ng-container>
+  </ng-container>
+</mat-nav-list>

@@ -467,10 +467,9 @@
           "warn",
           {
             "exceptMethods": [
-              "compareKeyValueIptfld",
+              "transform",
               "trackByFn",
-              "trackByDialButtonsFn",
-              "trackByInputFieldsFn"
+              "trackByLinkFn"
             ]
           }
         ],
